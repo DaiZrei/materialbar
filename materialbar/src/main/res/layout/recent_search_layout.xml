@@ -14,7 +14,7 @@
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="16dp"
-        android:textColor="@color/primaryTextColor"
+        android:textColor="@color/primaryTextColorLight"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/deleteSearch"
@@ -29,7 +29,7 @@
         android:layout_marginEnd="16dp"
         android:background="@android:color/transparent"
         android:contentDescription="@string/delete_search_item"
-        android:tint="@color/primaryTextColor"
+        android:tint="@color/primaryTextColorLight"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/close" />
