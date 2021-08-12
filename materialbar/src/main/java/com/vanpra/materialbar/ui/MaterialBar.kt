@@ -10,7 +10,7 @@ import androidx.constraintlayout.widget.ConstraintLayout
 import com.vanpra.materialbar.R
 import kotlinx.android.synthetic.main.material_bar_layout.view.*
 import kotlin.properties.Delegates
-import androidx.core.content.ContextCompat
+import androidx.appcompat.content.res.AppCompatResources
 
 
 class MaterialBarError(message: String) : Exception(message)
@@ -32,7 +32,7 @@ class MaterialBar @JvmOverloads constructor(
     var leftIcon: Int? = null
         set(value) {
             field = value
-            val drawable = ContextCompat.getDrawable(context,value!!)
+            val drawable = AppCompatResources.getDrawable(getContext(),value!!)
             left_icon.setImageDrawable(drawable)
             left_icon.visibility = View.VISIBLE
         }
