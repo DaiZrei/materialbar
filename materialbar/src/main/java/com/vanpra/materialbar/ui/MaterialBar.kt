@@ -72,7 +72,7 @@ class MaterialBar @JvmOverloads constructor(
             .inflate(R.layout.material_bar_layout, this, true)
 
         attrs?.let {
-            val typedArray = AppCompatResources.obtainStyledAttributes(
+            val typedArray = context.obtainStyledAttributes(
                 it,
                 R.styleable.MaterialBar, 0, 0
             )
