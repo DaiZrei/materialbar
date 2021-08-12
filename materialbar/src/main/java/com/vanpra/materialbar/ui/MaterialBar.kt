@@ -11,7 +11,7 @@ import com.vanpra.materialbar.R
 import kotlinx.android.synthetic.main.material_bar_layout.view.*
 import kotlin.properties.Delegates
 import androidx.appcompat.content.res.AppCompatResources
-
+import androidx.core.content.ContextCompat
 
 class MaterialBarError(message: String) : Exception(message)
 
@@ -79,15 +79,15 @@ class MaterialBar @JvmOverloads constructor(
 
             val text = typedArray.getText(R.styleable.MaterialBar_title)
             val rightIconDrawable = typedArray.getDrawable(R.styleable.MaterialBar_right_icon)
-            val leftIconDrawable = AppCompatResources.getDrawable(getContext(), R.styleable.MaterialBar_right_icon)
-
+            val leftIconDrawable = typedArray.getDrawable(R.styleable.MaterialBar_right_icon)
+            val leftIconDrawable2 = ContextCompat.getDrawable(getContext(), leftIconDrawable)
             if (rightIconDrawable != null) {
                 right_icon.setImageDrawable(rightIconDrawable)
                 right_icon.visibility = View.VISIBLE
             }
 
             if (leftIconDrawable != null) {
-                left_icon.setImageDrawable(leftIconDrawable)
+                left_icon.setImageDrawable(leftIconDrawable2)
                 left_icon.visibility = View.VISIBLE
             }
 
