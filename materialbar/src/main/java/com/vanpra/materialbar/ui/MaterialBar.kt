@@ -31,7 +31,7 @@ class MaterialBar @JvmOverloads constructor(
     var leftIcon: Int? = null
         set(value) {
             field = value
-            val drawable = AppCompatResources.getDrawable(value!!)
+            val drawable = context.getDrawable(value!!)
             left_icon.setImageDrawable(drawable)
             left_icon.visibility = View.VISIBLE
         }
