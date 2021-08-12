@@ -10,6 +10,7 @@ import androidx.constraintlayout.widget.ConstraintLayout
 import com.vanpra.materialbar.R
 import kotlinx.android.synthetic.main.material_bar_layout.view.*
 import kotlin.properties.Delegates
+import androidx.core.content.ContextCompat
 
 
 class MaterialBarError(message: String) : Exception(message)
