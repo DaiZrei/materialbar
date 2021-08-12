@@ -10,8 +10,7 @@ import androidx.constraintlayout.widget.ConstraintLayout
 import com.vanpra.materialbar.R
 import kotlinx.android.synthetic.main.material_bar_layout.view.*
 import kotlin.properties.Delegates
-import androidx.appcompat.content.res.AppCompatResources
-import androidx.core.content.ContextCompat
+
 
 class MaterialBarError(message: String) : Exception(message)
 
@@ -24,7 +23,7 @@ class MaterialBar @JvmOverloads constructor(
     var rightIcon: Int? = null
         set(value) {
             field = value
-            val drawable = context.getDrawable(context,value!!)
+            val drawable = context.getDrawable(value!!)
             right_icon.setImageDrawable(drawable)
             right_icon.visibility = View.VISIBLE
         }
@@ -32,7 +31,7 @@ class MaterialBar @JvmOverloads constructor(
     var leftIcon: Int? = null
         set(value) {
             field = value
-            val drawable = context.getDrawable(context,value!!)
+            val drawable = context.getDrawable(value!!)
             left_icon.setImageDrawable(drawable)
             left_icon.visibility = View.VISIBLE
         }
@@ -79,7 +78,8 @@ class MaterialBar @JvmOverloads constructor(
 
             val text = typedArray.getText(R.styleable.MaterialBar_title)
             val rightIconDrawable = typedArray.getDrawable(R.styleable.MaterialBar_right_icon)
-            val leftIconDrawable = typedArray.getDrawable(R.styleable.MaterialBar_right_icon)
+            val leftIconDrawable = typedArray.getDrawable(R.styleable.MaterialBar_left_icon)
+
             if (rightIconDrawable != null) {
                 right_icon.setImageDrawable(rightIconDrawable)
                 right_icon.visibility = View.VISIBLE
