@@ -84,9 +84,10 @@ class MaterialBar @JvmOverloads constructor(
                 right_icon.setImageDrawable(rightIconDrawable)
                 right_icon.visibility = View.VISIBLE
             }
-            if (Build.VERSION.SDK_INT > 23) {
+            
             if (leftIconDrawable != null) {
                 left_icon.setImageDrawable(leftIconDrawable)
+                if (Build.VERSION.SDK_INT > 23) {
                 left_icon.visibility = View.VISIBLE
             }
        }
