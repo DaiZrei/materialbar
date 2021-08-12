@@ -79,7 +79,7 @@ class MaterialBar @JvmOverloads constructor(
 
             val text = typedArray.getText(R.styleable.MaterialBar_title)
             val rightIconDrawable = typedArray.getDrawable(R.styleable.MaterialBar_right_icon)
-            val leftIconDrawable = typedArray.getResourceId(R.styleable.MaterialBar_left_icon, -1)
+            val leftIconDrawable = typedArray.getDrawable(R.styleable.MaterialBar_left_icon)
 
             if (rightIconDrawable != null) {
                 right_icon.setImageDrawable(rightIconDrawable)
