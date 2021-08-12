@@ -16,7 +16,7 @@ import androidx.core.content.ContextCompat
 class MaterialBarError(message: String) : Exception(message)
 
 class MaterialBar @JvmOverloads constructor(
-    context: ContextCompat,
+    context: Context,
     attrs: AttributeSet? = null,
     defStyleRes: Int = 0
 ) : ConstraintLayout(context, attrs, defStyleRes) {
@@ -24,7 +24,7 @@ class MaterialBar @JvmOverloads constructor(
     var rightIcon: Int? = null
         set(value) {
             field = value
-            val drawable = AppCompatResources.getDrawable(context,value!!)
+            val drawable = context.getDrawable(context,value!!)
             right_icon.setImageDrawable(drawable)
             right_icon.visibility = View.VISIBLE
         }
@@ -32,7 +32,7 @@ class MaterialBar @JvmOverloads constructor(
     var leftIcon: Int? = null
         set(value) {
             field = value
-            val drawable = AppCompatResources.getDrawable(context,value!!)
+            val drawable = context.getDrawable(context,value!!)
             left_icon.setImageDrawable(drawable)
             left_icon.visibility = View.VISIBLE
         }
