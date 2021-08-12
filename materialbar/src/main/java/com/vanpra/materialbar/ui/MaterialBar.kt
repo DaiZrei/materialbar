@@ -72,14 +72,14 @@ class MaterialBar @JvmOverloads constructor(
             .inflate(R.layout.material_bar_layout, this, true)
 
         attrs?.let {
-            val typedArray = AppCompatResources.obtainStyledAttributes(
+            val typedArray = context.obtainStyledAttributes(
                 it,
                 R.styleable.MaterialBar, 0, 0
             )
 
             val text = typedArray.getText(R.styleable.MaterialBar_title)
             val rightIconDrawable = typedArray.getDrawable(R.styleable.MaterialBar_right_icon)
-            val leftIconDrawable = typedArray.getDrawable(R.styleable.MaterialBar_left_icon)
+            val leftIconDrawable = AppCompatResources.getDrawable(getContext(), R.styleable.MaterialBar_right_icon)
 
             if (rightIconDrawable != null) {
                 right_icon.setImageDrawable(rightIconDrawable)
