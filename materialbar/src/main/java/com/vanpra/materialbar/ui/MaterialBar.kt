@@ -16,7 +16,7 @@ import androidx.core.content.ContextCompat
 class MaterialBarError(message: String) : Exception(message)
 
 class MaterialBar @JvmOverloads constructor(
-    context: AppCompatResources,
+    context: ContextCompat,
     attrs: AttributeSet? = null,
     defStyleRes: Int = 0
 ) : ConstraintLayout(context, attrs, defStyleRes) {
