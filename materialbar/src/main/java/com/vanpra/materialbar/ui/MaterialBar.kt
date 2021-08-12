@@ -24,7 +24,7 @@ class MaterialBar @JvmOverloads constructor(
     var rightIcon: Int? = null
         set(value) {
             field = value
-            val drawable = context.getDrawable(value!!)
+            val drawable = AppCompatResources.getDrawable(context,value!!)
             right_icon.setImageDrawable(drawable)
             right_icon.visibility = View.VISIBLE
         }
@@ -32,7 +32,7 @@ class MaterialBar @JvmOverloads constructor(
     var leftIcon: Int? = null
         set(value) {
             field = value
-            val drawable = AppCompatResources.getDrawable(getContext(),value!!)
+            val drawable = AppCompatResources.getDrawable(context,value!!)
             left_icon.setImageDrawable(drawable)
             left_icon.visibility = View.VISIBLE
         }
@@ -72,7 +72,7 @@ class MaterialBar @JvmOverloads constructor(
             .inflate(R.layout.material_bar_layout, this, true)
 
         attrs?.let {
-            val typedArray = context.obtainStyledAttributes(
+            val typedArray = AppCompatResources.obtainStyledAttributes(
                 it,
                 R.styleable.MaterialBar, 0, 0
             )
